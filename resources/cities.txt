@@ -1,0 +1,13 @@
+Wroclaw;Lodz;216.8
+Wroclaw;Poznan;184.4
+Wroclaw;Katowice;194.5
+Krakow;Katowice;80.36
+Krakow;Warszawa;294.8
+Krakow;Lodz;266.8
+Lodz;Warszawa;139.1
+Poznan;Lodz;217.8
+Poznan;Gdansk;337.9
+Lodz;Gdansk;336.9
+Warszawa;Gdansk;417.4
+Gdynia;Gdansk;22.4
+Boston;New York;345.6
