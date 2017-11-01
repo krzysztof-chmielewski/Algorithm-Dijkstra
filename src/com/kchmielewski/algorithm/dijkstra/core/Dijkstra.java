@@ -4,13 +4,10 @@ import com.kchmielewski.algorithm.dijkstra.structure.Edge;
 import com.kchmielewski.algorithm.dijkstra.structure.Graph;
 import com.kchmielewski.algorithm.dijkstra.structure.Vertex;
 
-import java.util.HashSet;
-import java.util.PriorityQueue;
-import java.util.Queue;
-import java.util.Set;
+import java.util.*;
 
 public class Dijkstra {
-    public <T> float calculate(Graph<T> graph, Vertex<T> from, Vertex<T> to) {
+    public <T> Optional<Float> calculate(Graph<T> graph, Vertex<T> from, Vertex<T> to) {
         Set<Vertex<T>> vertices = new HashSet<>(graph.vertices());
         vertices.stream().filter(v -> v != from).forEach(v -> v.value(Float.MAX_VALUE));
         from.value(0);
@@ -30,6 +27,10 @@ public class Dijkstra {
             }
         }
 
-        return to.value();
+        if (to.value() == Float.MAX_VALUE) {
+            return Optional.empty();
+        }
+
+        return Optional.of(to.value());
     }
 }
