@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Vertex<T> {
+public class Vertex<T> implements Comparable<Vertex<T>> {
     private final T name;
     private final List<Edge<T>> edges = new ArrayList<>();
     private float value;
@@ -53,5 +53,10 @@ public class Vertex<T> {
     @Override
     public String toString() {
         return name.toString();
+    }
+
+    @Override
+    public int compareTo(Vertex<T> o) {
+        return Float.compare(value, o.value);
     }
 }

@@ -4,6 +4,8 @@ import com.kchmielewski.algorithm.dijkstra.structure.Graph;
 import com.kchmielewski.algorithm.dijkstra.structure.Vertex;
 
 import java.util.HashSet;
+import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.Set;
 
 public class Dijkstra {
@@ -11,6 +13,8 @@ public class Dijkstra {
         Set<Vertex<T>> vertices = new HashSet<>(graph.vertices());
         vertices.stream().filter(v -> v != from).forEach(v -> v.value(Float.MAX_VALUE));
         from.value(0);
+
+        Queue<Vertex<T>> queue = new PriorityQueue<>(vertices);
 
         return 0f;
     }
