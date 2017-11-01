@@ -8,7 +8,6 @@ import java.util.HashSet;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class Dijkstra {
     public <T> float calculate(Graph<T> graph, Vertex<T> from, Vertex<T> to) {
