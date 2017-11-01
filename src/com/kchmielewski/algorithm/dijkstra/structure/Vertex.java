@@ -7,6 +7,7 @@ import java.util.List;
 public class Vertex<T> {
     private final T name;
     private final List<Edge<T>> edges = new ArrayList<>();
+    private float value;
 
     public Vertex(T name) {
         this.name = name;
@@ -24,6 +25,29 @@ public class Vertex<T> {
 
     public List<Edge<T>> edges() {
         return edges;
+    }
+
+    public void value(float value) {
+        this.value = value;
+    }
+
+    public float value() {
+        return value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Vertex<?> vertex = (Vertex<?>) o;
+
+        return name != null ? name.equals(vertex.name) : vertex.name == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return name != null ? name.hashCode() : 0;
     }
 
     @Override
