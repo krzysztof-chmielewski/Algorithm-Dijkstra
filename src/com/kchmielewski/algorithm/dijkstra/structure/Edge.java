@@ -24,4 +24,14 @@ public class Edge<T> {
     public float value() {
         return value;
     }
+
+    public Vertex<T> other(Vertex<T> given) {
+        if (vertices.get(0) == given) {
+            return vertices.get(1);
+        } else if (vertices.get(1) == given) {
+            return vertices.get(0);
+        } else {
+            throw new IllegalArgumentException("Called #other method with Vertex that do not belongs to the edge.");
+        }
+    }
 }
