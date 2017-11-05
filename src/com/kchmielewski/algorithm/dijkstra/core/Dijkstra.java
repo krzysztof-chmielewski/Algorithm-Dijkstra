@@ -8,7 +8,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class Dijkstra {
-    public <T> Optional<Result> calculate(Graph<T> graph, Vertex<T> from, Vertex<T> to) {
+    public <T> Optional<Result<T>> calculate(Graph<T> graph, Vertex<T> from, Vertex<T> to) {
         Set<Vertex<T>> vertices = new HashSet<>(graph.vertices());
         vertices.stream().filter(v -> v != from).forEach(v -> v.value(Float.MAX_VALUE));
         from.value(0);
