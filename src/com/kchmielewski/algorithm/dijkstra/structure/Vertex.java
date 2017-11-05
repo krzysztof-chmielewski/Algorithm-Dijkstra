@@ -35,6 +35,16 @@ public class Vertex<T> implements Comparable<Vertex<T>> {
         return value;
     }
 
+    public boolean alreadyLinked(Vertex<T> other) {
+        for (Edge<T> edge : edges) {
+            if (edge.other(this) == other) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
